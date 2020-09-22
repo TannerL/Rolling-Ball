@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float Ylocation;
 
     private int count;
+    private Vector3 scaleChange = new Vector3(.05f, .05f, .05f);
 
 
     // Start is called before the first frame update
@@ -61,6 +62,8 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count++;
+            
+            player.transform.localScale += (scaleChange);
 
             SetCountText();
         }
